@@ -3,12 +3,16 @@ Automatically extract table data into a datatable
 
 Simply extract the files to a folder and open config.php
 
-Edit these lines ONLY:
+Edit the config file:
 ````
-define( 'DB_HOST', 'localhost' ); // Set the database host (usually localhost)
-define( 'DB_USER', '' ); // Set the Database Username (The one you use to connect)
-define( 'DB_PASS', '' ); // Set the Database Password
-define( 'DB_NAME', '' ); // Set the Database Name (The database your using)
+return array(
+	'host' => 'localhost',
+	'port' => '3306',
+	'user' => 'root',
+	'pass' => 'cracked',
+	'dbname' => 'webcodexcms'
+);
+
 ````
 
 Navigate to your folder to view the index.php
