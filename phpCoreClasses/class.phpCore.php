@@ -6,14 +6,11 @@ WebCodeX
 
 PDO Database Interaction Class
 
+DO NOT EDIT ANYTHING IN HERE
+
 */
 
 class phpCore {
-	
-	private $host      = DB_HOST;
-    private $user      = DB_USER;
-    private $pass      = DB_PASS;
-    private $dbname    = DB_NAME;
  
     private $dbh;
     private $error;
@@ -22,9 +19,13 @@ class phpCore {
  	// Creates a PDO instance representing a connection to a database
 	// See http://php.net/manual/en/pdo.construct.php For more info
     public function __construct() {
+		
+		
+	$settings = include_once('config.php');
+	
         // The Data Source Name, or DSN, contains the information required to connect to the database.
 		// See http://php.net/manual/en/pdo.construct.php For more info
-        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
+        $dsn = 'mysql:host=' . $settings['host'] . ';dbname=' . $settings['dbname'];
         // A key=>value array of driver-specific connection options
 		// See http://php.net/manual/en/pdo.construct.php For more info
         $options = array(
@@ -34,7 +35,7 @@ class phpCore {
         );
         // Try and create a new PDO instanace
         try{
-            $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
+            $this->dbh = new PDO($dsn, $settings['user'], $settings['pass'], $options);
         }
         // Represents an error raised by PDO
 		// See http://php.net/manual/en/exception.getmessage.php & http://php.net/manual/en/class.pdoexception.php For more info
