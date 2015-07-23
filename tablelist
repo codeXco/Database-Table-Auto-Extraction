@@ -1,0 +1,6 @@
+<?php 
+echo 'Database Name:&nbsp;<br /><br />';
+echo 'Available Tables:&nbsp;&nbsp;'; 
+foreach($phpCore->getAllDbTables() as $tablenameHeader) {
+	echo '<br /><a href="index.php?table='.$tablenameHeader.'">'.ucfirst($tablenameHeader).'</a>';
+}
